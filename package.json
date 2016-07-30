@@ -16,6 +16,9 @@
 		"rockyjs",
 		"lint"
   ],
+  "engines": {
+    "node" : ">=5.10.0"
+  },
   "dependencies": {
     "typescript": "^1.8.10"
   },
