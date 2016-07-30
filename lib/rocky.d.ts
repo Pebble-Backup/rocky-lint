@@ -1,7 +1,11 @@
 declare namespace rocky {
+  interface IsNotImplementedInRockyYet {
+    _doesNotWork: any
+  }
+
   interface EventBase {
-    type?: String // FIXME
-    origin?: String // FIXME pebble://SERIAL/APP_UUID
+    type: IsNotImplementedInRockyYet // FIXME: string
+    origin: IsNotImplementedInRockyYet // FIXME: string, pebble://SERIAL/APP_UUID
   }
 
   interface DrawEvent extends EventBase {
@@ -9,7 +13,7 @@ declare namespace rocky {
   }
 
   interface TickEvent extends EventBase {
-    date?: Date // FIXME
+    date: IsNotImplementedInRockyYet // FIXME Date
   }
 
   type MemoryPressureLevel = "low" | "medium" | "high"
@@ -18,15 +22,12 @@ declare namespace rocky {
     level: MemoryPressureLevel
   }
 
-  interface MessageEvent {} // FIXME: raw object, should be proper event with .data
-
-  interface Event extends EventBase, DrawEvent, TickEvent, MemoryPressureEvent, MessageEvent { }
+  interface Event extends EventBase, DrawEvent, TickEvent, MemoryPressureEvent { }
 
   interface RenderingContext extends CanvasRenderingContext2D {
     canvas: Canvas
     measureText(text: string): ExtendedTextMetrics
     curveTo(x: IsNotImplementedInRockyYet, y: number): void
-    // curveTo: IsNotImplementedInRockyYet
   }
 
   interface ExtendedTextMetrics extends TextMetrics {
@@ -35,13 +36,6 @@ declare namespace rocky {
     actualBoundingBoxRight?: void // FIXME: remove from docs
   }
 
-  interface IsNotImplementedInRockyYet {
-    _doesNotWork: any
-  }
-
-  /**
-   * Blubb
-   */
   interface Canvas extends HTMLCanvasElement {
     unobstructedWidth: number
     unobstructedHeight: number
@@ -57,16 +51,18 @@ declare namespace rocky {
 
   interface EventHandler { (event: Event): void }
 
-  type EventName = "draw" | "message" | "secondchange" | "minutechange" | "hourchange" | "daychange" | "memorypressure"
-
   interface Rocky {
-    // on(eventName: EventName, eventHandler: EventHandler): void
-    on(eventName: "minutechange", eventListener: (event: TickEvent) => void): void
     on(eventName: "draw", eventListener: (event: DrawEvent) => void): void
+    on(eventName: "message", messageListener: (message: any) => void): void // FIXME: proper event with .data
+    on(eventName: "hourchange", eventListener: (event: TickEvent) => void): void
+    on(eventName: "minutechange", eventListener: (event: TickEvent) => void): void
+    on(eventName: "secondchange", eventListener: (event: TickEvent) => void): void
+    on(eventName: "daychange", eventListener: (event: TickEvent) => void): void
+    on(eventName: "memorypressure", eventListener: (event: MemoryPressureEvent) => void): void
     on(eventName: string, eventListener: (event: Event) => void): void
     postMessage(message: any): void
     requestDraw(): void
-    watchInfo?: WatchInfo // Not supported yet
+    watchInfo: IsNotImplementedInRockyYet // FIXME: WatchInfo
   }
 }
 
