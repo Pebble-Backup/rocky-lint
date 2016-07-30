@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/rocky-lint.js')
+require('../lib/rocky-lint')
