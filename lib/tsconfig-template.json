@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "es5",
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true,
-    "noEmit": false
-  }
-}
