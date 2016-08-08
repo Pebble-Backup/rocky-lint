@@ -26,5 +26,14 @@
   },
   "bin": {
     "rocky-lint": "./bin/rocky-lint"
+  },
+  "scripts": {
+    "lint": "eslint lib/rocky-lint.js",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^2.0.2",
+    "eslint-config-pebble": "github:pebble/eslint-config-pebble#2.0.0",
+    "eslint-plugin-standard": "^1.1.0"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+  },
+
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
+
+  "extends": [
+    "pebble"
+  ],
+
+  "globals": {
+    "document": false,
+    "navigator": false,
+    "window": false
+  },
+
+  "rules": {
+    "comma-dangle": [
+      "warn",
+      "always-multiline"
+    ],
+    "no-var": "error",
+    "prefer-const": "error",
+    "arrow-parens": ["error", "always"]
+  }
+}
