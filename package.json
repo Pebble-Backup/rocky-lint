@@ -10,7 +10,7 @@
     "url": "https://github.com/pebble/rocky-lint.git"
   },
   "main": "lib/rocky-lint.js",
-  "license": "http://pebble.github.io/rockyjs/LICENSE",
+  "license": "MIT",
   "keywords": [
     "pebble",
     "rockyjs",
