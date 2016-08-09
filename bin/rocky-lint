@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-require('../lib/rocky-lint')
+'use strict';
+require('../lib/rocky-lint');

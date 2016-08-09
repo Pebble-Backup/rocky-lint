@@ -28,7 +28,7 @@
     "rocky-lint": "./bin/rocky-lint"
   },
   "scripts": {
-    "lint": "eslint lib/rocky-lint.js",
+    "lint": "eslint lib/rocky-lint.js bin/rocky-lint",
     "test": "npm run lint"
   },
   "devDependencies": {
