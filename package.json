@@ -29,7 +29,8 @@
   },
   "scripts": {
     "lint": "eslint lib/rocky-lint.js bin/rocky-lint",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "test-integrity": "bin/rocky-lint -d test/rocky.d.ts test/simple.js"
   },
   "devDependencies": {
     "eslint": "^2.0.2",
