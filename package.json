@@ -1,6 +1,6 @@
 {
   "name": "rocky-lint",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Linter for Rocky.js projects",
   "bugs": {
     "url": "https://github.com/pebble/rocky-lint/issues"
